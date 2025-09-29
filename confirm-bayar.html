@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirm Bayar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konfirmasi Pembayaran</title>
+  <link rel="stylesheet" href="css/konfirmasi.css">
 </head>
 <body>
-    
+  <header>Konfirmasi pembayaran</header>
+
+  <main class="container">
+    <h2>Konfirmasi Pesanan</h2>
+    <p>Pilih Metode Pembayaran</p>
+
+    <section class="method-section">
+      <div class="method-title">Virtual Account</div>
+      <div class="payment-option">
+        <i class="icon">💲</i>
+        <span>Bank Mandiri</span>
+        <select>
+          <option>Mandiri</option>
+          <option>BCA</option>
+          <option>BNI</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="method-section">
+      <div class="method-title">Cards</div>
+      <div class="payment-option">
+        <i class="icon">💳</i>
+        <span>Credit Card</span>
+        <select>
+          <option>Visa</option>
+          <option>Mastercard</option>
+        </select>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
 </body>
 </html>
