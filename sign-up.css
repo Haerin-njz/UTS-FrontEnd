@@ -161,3 +161,14 @@ button[type="submit"]:hover {
 .login-link a:hover {
     text-decoration: underline;
 }
+
+/* Styling untuk kontainer pesan error */
+.error-container {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8d7da; /* Latar belakang merah muda */
+    color: #721c24; /* Teks merah tua */
+    border: 1px solid #f5c6cb;
+    list-style-position: inside; /* Agar bullet point rapi di dalam */
+}
