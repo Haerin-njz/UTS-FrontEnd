@@ -1,11 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout Film</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemesanan Kursi</title>
+  <style>
+    .screen { text-align:center; margin:20px; font-weight:bold; }
+    .row { display:flex; justify-content:center; margin:5px 0; }
+    .seat {
+      width:30px; height:30px;
+      margin:3px;
+      background:#4CAF50; 
+      color:white; font-size:12px;
+      display:flex; align-items:center; justify-content:center;
+      border-radius:5px;
+      cursor:pointer;
+      user-select: none;
+    }
+    .seat.selected { background:#2196F3; } 
+    .seat.booked { background:#777; cursor:not-allowed; } 
+  </style>
 </head>
 <body>
-    
+  <h1>Pilih Kursi</h1>
+
+  <div class="screen">Layar</div>
+  <div id="seat-container"></div>
+
+  <h3>Kursi Dipilih:</h3>
+  <p id="selected-seats">-</p>
+  <button id="checkoutBtn">Checkout</button>
+  <button id="backBtn">Kembali ke Jadwal</button>
+
+  <script>
+    const bookings = JSON.parse(localStorage.getItem("bookings")) || {
+      "12": [],
+      "14": [],
+      "16": [],
+      "18": [],
+      "20": []
+    };
+
+    const seatContainer = document.getElementById('seat-container');
+    const output = document.getElementById('selected-seats');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const backBtn = document.getElementById('backBtn');
+
+    let selected = []; 
+
+    const params = new URLSearchParams(window.location.search);
+    const jam = params.get("jam") || "12";
+
+    function renderSeats(jam) {
+      seatContainer.innerHTML = "";
+      selected = [];
+      output.textContent = "-";
+
+      for (let row = 0; row < 4; row++) {
+        const rowDiv = document.createElement('div');
+        rowDiv.classList.add('row');
+
+        for (let col = 1; col <= 8; col++) {
+          const seatId = String.fromCharCode(65 + row) + col;
+          const seat = document.createElement('div');
+          seat.classList.add('seat');
+          seat.textContent = seatId;
+          seat.dataset.seat = seatId;
+
+          if (bookings[jam].includes(seatId)) {
+            seat.classList.add('booked');
+          } else {
+            seat.addEventListener('click', () => toggleSeat(seatId, seat));
+          }
+
+          rowDiv.appendChild(seat);
+        }
+
+        seatContainer.appendChild(rowDiv);
+      }
+    }
+
+    function toggleSeat(seatId, seatElem) {
+      if (seatElem.classList.contains('selected')) {
+        seatElem.classList.remove('selected');
+        selected = selected.filter(s => s !== seatId);
+      } else {
+        seatElem.classList.add('selected');
+        selected.push(seatId);
+      }
+      output.textContent = selected.length ? selected.join(", ") : "-";
+    }
+
+    checkoutBtn.addEventListener('click', () => {
+      if (selected.length === 0) {
+        alert("Belum pilih kursi!");
+        return;
+      }
+
+      bookings[jam] = bookings[jam].concat(selected);
+
+      localStorage.setItem("bookings", JSON.stringify(bookings));
+
+      alert(`Checkout sukses untuk jam ${jam}: ${selected.join(", ")}`);
+
+      window.location.href = "jadwal-film.html";
+    });
+
+    backBtn.addEventListener('click', () => {
+      window.location.href = "jadwal-film.html";
+    });
+
+    renderSeats(jam);
+  </script>
 </body>
 </html>
