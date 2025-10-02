@@ -1,0 +1,108 @@
+/* Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #E6B980; /* warna coklat muda */
+  padding: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+
+header span {
+  margin-left: 10px;
+}
+
+/* Card Film */
+.film-card {
+  display: flex;
+  padding: 15px;
+  margin: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.film-card img {
+  width: 100px;
+  height: 140px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.film-info {
+  flex: 1;
+}
+
+.film-info h2 {
+  margin: 5px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.film-info p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Tab Navigasi */
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #c00;
+  margin: 0 15px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  border-bottom: 2px solid #c00;
+  font-weight: bold;
+}
+
+/* Jadwal Section */
+.schedule {
+  margin: 15px;
+}
+
+.schedule h3 {
+  color: #c00;
+  margin-bottom: 10px;
+}
+
+.day {
+  margin-bottom: 12px;
+}
+
+.day p {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.day button {
+  margin: 5px 5px 0 0;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.day button:hover {
+  background: #f2f2f2;
+}
