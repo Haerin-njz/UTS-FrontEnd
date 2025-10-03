@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Konfirmasi Pembayaran</title>
-  <link rel="stylesheet" href="konfirmasi.css">
+  <link rel="stylesheet" href="konfirmasi.css" />
 </head>
 <body>
-  <header>Konfirmasi pembayaran</header>
+  <header>Konfirmasi Pembayaran</header>
 
   <main class="container">
     <h2>Konfirmasi Pesanan</h2>
@@ -17,31 +17,33 @@
       <div class="method-title">Virtual Account</div>
       <div class="payment-option">
         <i class="icon">💲</i>
-        <span>Bank Mandiri</span>
-        <select>
-          <option>Mandiri</option>
-          <option>BCA</option>
-          <option>BNI</option>
+        <span>Bank</span>
+        <select id="vaSelect">
+          <option value="Mandiri">Mandiri</option>
+          <option value="BCA">BCA</option>
+          <option value="BNI">BNI</option>
         </select>
       </div>
     </section>
 
     <section class="method-section">
-      <div class="method-title">Cards</div>
+      <div class="method-title">Kartu Kredit / Debit</div>
       <div class="payment-option">
         <i class="icon">💳</i>
-        <span>Credit Card</span>
-        <select>
-          <option>Visa</option>
-          <option>Mastercard</option>
+        <span>Kartu</span>
+        <select id="cardSelect">
+          <option value="Visa">Visa</option>
+          <option value="Mastercard">Mastercard</option>
         </select>
       </div>
     </section>
+
+    <div class="action">
+      <button id="lanjutBtn">Lanjutkan Pembayaran</button>
+    </div>
   </main>
 
-  <footer></footer>
-
+  <footer>© 2025 | Kelompok 4 </footer>
   <script src="confirm-bayar.js"></script>
-
 </body>
 </html>
