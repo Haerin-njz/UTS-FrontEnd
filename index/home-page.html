@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UTS Front END</title>
-    <link rel="stylesheet" href="home-page.css">
+    <link rel="stylesheet" href="/style/home-page.css">
 </head>
 <body>
   <!-- Header Halaman -->
@@ -19,14 +19,18 @@
     </header>
 <!-- Body -->
     <main>
-            <div class="container">
-                <div class="search-bar">
-                    <input type="text" placeholder="Search">
-                </div>
-                <div class="search-bar">
-                    <input type="text" placeholder="Lokasi">
-                </div>
-            </div>
+        <div class="container search-wrapper">
+    <button class="custom-btn">
+        <img src="/img/icons/search.png" alt="Search" class="icon">
+        <span>Cari Film</span>
+    </button>
+
+    <button class="custom-btn">
+        <img src="/img/icons/location.png" alt="Lokasi" class="icon">
+        <span>Cari Bioskop</span>
+    </button>
+</div>
+    </div>  
         </section>
 
         <section class="movie-gallery">
@@ -39,19 +43,19 @@
                     <div class="arrow prev-arrow">&larr;</div>
                     <div class="movie-list">
                         <div class="list-film">
-                          <img src="img/Gambar-Onepiece.jpg" alt="Film 1">
+                          <img src="/img/Gambar-Onepiece.jpg" alt="Film 1">
                         </div>
                         <div class="list-film">
-                          <img src="img/Gambar-Onepiece.jpg" alt="Film 2">
+                          <img src="/img/Gambar-Onepiece.jpg" alt="Film 2">
                     </div>
                         <div class="list-film">
-                          <img src="img/Gambar-Onepiece.jpg" alt="Film 3">
+                          <img src="/img/Gambar-Onepiece.jpg" alt="Film 3">
                     </div>
                         <div class="list-film">
-                          <img src="img/Gambar-Onepiece.jpg" alt="Film 4">
+                          <img src="/img/Gambar-Onepiece.jpg" alt="Film 4">
                     </div>
                         <div class="list-film">
-                          <img src="img/Gambar-Onepiece.jpg" alt="Film 5">
+                          <img src="/img/Gambar-Onepiece.jpg" alt="Film 5">
                     </div>
                     <div class="arrow next-arrow">&rarr;</div>
                 </div>
@@ -69,19 +73,19 @@
                     <div class="movie-list">
                         <div class="movie-list">
                         <div class="list-film">
-                          <img src="img/Gambar-Onepiece.jpg" alt="Film 1">
+                          <img src="/img/Gambar-Onepiece.jpg" alt="Film 1">
                         </div>
                         <div class="list-film">
-                          <img src="img/Gambar-Onepiece.jpg" alt="Film 2">
+                          <img src="/img/Gambar-Onepiece.jpg" alt="Film 2">
                     </div>
                         <div class="list-film">
-                          <img src="img/Gambar-Onepiece.jpg" alt="Film 3">
+                          <img src="/img/Gambar-Onepiece.jpg" alt="Film 3">
                     </div>
                         <div class="list-film">
-                          <img src="img/Gambar-Onepiece.jpg" alt="Film 4">
+                          <img src="/img/Gambar-Onepiece.jpg" alt="Film 4">
                     </div>
                         <div class="list-film">
-                          <img src="img/Gambar-Onepiece.jpg" alt="Film 5">
+                          <img src="/img/Gambar-Onepiece.jpg" alt="Film 5">
                     </div>
                     <div class="arrow">&rarr;</div>
                 </div>
@@ -97,6 +101,7 @@
                 <a href="#">Twitter</a>
                 <a href="#">YouTube</a>
             </div>
+            <hr>
             <p class="copyright">&copy;Copyrights Kelompok 4</p>
         </div>
     </footer>
