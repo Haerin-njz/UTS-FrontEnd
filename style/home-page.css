@@ -29,9 +29,10 @@ header .container {
     align-items: center;
 }
 
-.logo {
-    font-weight: bold;
-    font-size: 1.2em;
+.logo img {
+    width: 150px; 
+    height: 150px; 
+    display: block;
 }
 
 .login-signup a {
