@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #FFFBEB; 
+    background-color: #f2ecd6e7; 
     color: #333;
 }
 
@@ -24,15 +24,17 @@ header {
 }
 
 header .container {
+    max-width: none;
+    padding: 0 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
-.logo img {
-    width: 150px; 
-    height: 150px; 
-    display: block;
+.logo {
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 .login-signup a {
@@ -60,7 +62,6 @@ header .container {
     background-color: #555;
 }
 
-/* --- Search Section --- */
 /* --- Search Section --- */
 
 /* Aturan ini tetap sama untuk menumpuk tombol secara vertikal */
@@ -109,16 +110,15 @@ header .container {
     margin-bottom: 30px;
 }
 
-.gallery-header {
-    padding: 12px 0;
+section.movie-gallery {
+    margin-top: 80px; /* Atur besar jarak yang Anda inginkan di sini */
 }
 
-.gallery-header .container {
+.gallery-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 12px 0;
 }
 
 .gallery-header h2 {
@@ -132,30 +132,61 @@ header .container {
     font-weight: 500;
 }
 
+/* PENTING: Jadikan carousel sebagai referensi posisi */
 .carousel {
+    position: relative; /* Ini penting untuk posisi panah */
     display: flex;
     align-items: center;
-    padding: 20px 0;
 }
 
+/* HAPUS CSS .arrow LAMA DAN GANTI DENGAN INI */
 .arrow {
-    font-size: 2.5em;
+    position: absolute;   /* Posisi panah akan mengambang di atas konten */
+    top: 50%;             /* Posisikan di tengah secara vertikal */
+    transform: translateY(-50%); /* Penyesuaian agar benar-benar di tengah */
+    z-index: 10;          /* Pastikan panah di atas gambar film */
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;   /* Membuatnya menjadi lingkaran */
+    width: 45px;          /* Lebar lingkaran */
+    height: 45px;         /* Tinggi lingkaran */
+    font-size: 1.5em;       /* Ukuran ikon panah */
     cursor: pointer;
-    padding: 0 10px;
-    color: #888;
-    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
 }
+
 .arrow:hover {
-    color: #333;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.prev-arrow {
+    left: 15px; /* Jarak dari sisi kiri */
+}
+
+.next-arrow {
+    right: 15px; /* Jarak dari sisi kanan */
 }
 
 .movie-list {
     display: flex;
     gap: 20px;
-    overflow-x: hidden;
+    overflow-x: scroll;  /* Ubah dari hidden ke scroll */
+    scroll-behavior: smooth; /* Membuat scroll menjadi mulus */
     flex-grow: 1;
-    padding: 0 10px;
+    padding: 20px;
+    /* Menyembunyikan scrollbar bawaan browser */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
+
+.movie-list::-webkit-scrollbar { /* WebKit/Blink */
+    display: none;
+}
+
 
 .list-film {
     flex: 0 0 200px;
@@ -180,11 +211,14 @@ footer {
     text-align: center;
 }
 
+
+
 .media-social {
     padding: 30px 0;
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin-top: 80px;
 }
 
 .media-social a {
@@ -205,7 +239,20 @@ footer {
     border-color: #333;
 }
 
+.media-social a img {
+    width: 35px;  
+    height: 35px;
+}
+
+/* hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 0 20px;
+}              */
+
 .copyright {
+    text-align: center;
     padding: 15px 0;
     font-weight: 500;
+    margin-bottom: 50px;
 }
