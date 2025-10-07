@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: #f0f2f5;
+    color: #333; /* Warna teks utama */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -12,20 +13,19 @@ body {
     justify-content: center;
     padding: 15px 20px;
     position: relative;
+    background-color: #d4b27c; 
+    color: #000; 
 }
 
-.header h1 {
-    margin: 0;
-    font-size: 1.25em; 
-    font-weight: 600; 
-}
+.header h1 { margin: 0; font-size: 1.25em; font-weight: 600; }
 
 .back-btn {
     position: absolute;
     left: 20px;
-    font-size: 1.6em; 
+    font-size: 1.6em;
     line-height: 1;
     text-decoration: none;
+    color: #000; 
 }
 
 .container { padding: 20px; }
@@ -36,6 +36,7 @@ body {
     padding: 20px;
     margin-bottom: 25px;
     border-radius: 8px;
+    background-color: #fff; 
 }
 
 .profile-picture {
@@ -43,17 +44,15 @@ body {
     height: 60px;
     margin-right: 18px;
     border-radius: 50%;
+    background-color: #e0e0e0; 
 }
 
-.profile-info h2 {
-    margin: 0;
-    font-size: 1.2em; 
-    font-weight: 700; 
-}
+.profile-info h2 { margin: 0; font-size: 1.2em; font-weight: 700; }
 
 .profile-info p {
     margin: 4px 0 0;
-    font-size: 0.95em; 
+    font-size: 0.95em;
+    color: #666; 
 }
 
 .menu-list {
@@ -62,6 +61,7 @@ body {
     list-style: none;
     border-radius: 8px;
     overflow: hidden;
+    background-color: #fff; 
 }
 
 .menu-item a {
@@ -70,9 +70,20 @@ body {
     justify-content: space-between;
     padding: 16px 20px;
     text-decoration: none;
+    color: #333; 
 }
 
 .arrow {
     font-weight: bold;
-    font-size: 1.1em; 
+    font-size: 1.1em;
+    color: #888; 
+}
+
+.menu-item.logout a {
+    color: #e74c3c; 
+    font-weight: 600;
+}
+
+.menu-item.logout a .arrow {
+    color: #e74c3c; 
 }
