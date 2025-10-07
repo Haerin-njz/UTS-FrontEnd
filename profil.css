@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: #f0f2f5;
-    color: #333; /* Warna teks utama */
+    color: #333;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -13,11 +13,16 @@ body {
     justify-content: center;
     padding: 15px 20px;
     position: relative;
-    background-color: #d4b27c; 
-    color: #000; 
+    background-color: #d4b27c;
+    color: #000;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.header h1 { margin: 0; font-size: 1.25em; font-weight: 600; }
+.header h1 {
+    margin: 0;
+    font-size: 1.25em;
+    font-weight: 600;
+}
 
 .back-btn {
     position: absolute;
@@ -25,10 +30,12 @@ body {
     font-size: 1.6em;
     line-height: 1;
     text-decoration: none;
-    color: #000; 
+    color: #000;
 }
 
-.container { padding: 20px; }
+.container {
+    padding: 20px;
+}
 
 .profile-summary {
     display: flex;
@@ -36,7 +43,8 @@ body {
     padding: 20px;
     margin-bottom: 25px;
     border-radius: 8px;
-    background-color: #fff; 
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
 .profile-picture {
@@ -44,15 +52,21 @@ body {
     height: 60px;
     margin-right: 18px;
     border-radius: 50%;
-    background-color: #e0e0e0; 
+    background-image: url('/img/icons/user.png');
+    background-size: cover;
+    background-position: center;
 }
 
-.profile-info h2 { margin: 0; font-size: 1.2em; font-weight: 700; }
+.profile-info h2 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 700;
+}
 
 .profile-info p {
     margin: 4px 0 0;
     font-size: 0.95em;
-    color: #666; 
+    color: #666;
 }
 
 .menu-list {
@@ -61,7 +75,8 @@ body {
     list-style: none;
     border-radius: 8px;
     overflow: hidden;
-    background-color: #fff; 
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
 .menu-item a {
@@ -70,20 +85,30 @@ body {
     justify-content: space-between;
     padding: 16px 20px;
     text-decoration: none;
-    color: #333; 
+    color: #333;
+    border-bottom: 1px solid #f0f2f5;
+    transition: background-color 0.2s ease;
+}
+
+.menu-item a:hover {
+    background-color: #f9f9f9;
+}
+
+.menu-item:last-child a {
+    border-bottom: none;
 }
 
 .arrow {
     font-weight: bold;
     font-size: 1.1em;
-    color: #888; 
+    color: #888;
 }
 
 .menu-item.logout a {
-    color: #e74c3c; 
+    color: #e74c3c;
     font-weight: 600;
 }
 
 .menu-item.logout a .arrow {
-    color: #e74c3c; 
+    color: #e74c3c;
 }
