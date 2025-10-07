@@ -1,7 +1,9 @@
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: #f0f2f5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .header {
@@ -12,15 +14,21 @@ body {
     position: relative;
 }
 
+.header h1 {
+    margin: 0;
+    font-size: 1.25em; 
+    font-weight: 600; 
+}
+
 .back-btn {
     position: absolute;
     left: 20px;
+    font-size: 1.6em; 
+    line-height: 1;
     text-decoration: none;
 }
 
-.container {
-    padding: 20px;
-}
+.container { padding: 20px; }
 
 .profile-summary {
     display: flex;
@@ -37,6 +45,17 @@ body {
     border-radius: 50%;
 }
 
+.profile-info h2 {
+    margin: 0;
+    font-size: 1.2em; 
+    font-weight: 700; 
+}
+
+.profile-info p {
+    margin: 4px 0 0;
+    font-size: 0.95em; 
+}
+
 .menu-list {
     margin: 0;
     padding: 0;
@@ -51,4 +70,9 @@ body {
     justify-content: space-between;
     padding: 16px 20px;
     text-decoration: none;
+}
+
+.arrow {
+    font-weight: bold;
+    font-size: 1.1em; 
 }
