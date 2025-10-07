@@ -1,24 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>halaman profil page</title>
+    <title>Halaman Profil</title>
+    <link rel="stylesheet" href="../style/profil.css">
 </head>
 <body>
-    <ul class="menu-list">
+    <header class="header">
+        <a href="home-page.html" class="back-btn" aria-label="Kembali">←</a>
+        <h1>Profil Saya</h1>
+    </header>
+
+    <main class="container">
+        <section class="profile-summary">
+            <img src="../img/profile-placeholder.png" alt="Foto Profil" class="profile-picture">
+            <div class="profile-info">
+                <h2 class="profile-name">Nama Pengguna</h2>
+                <p class="profile-email">email@pengguna.com</p>
+            </div>
+        </section>
+
+        <ul class="menu-list">
             <li class="menu-item">
-                <span>History</span>
-                <span class="arrow">&gt;</span>
+                <a href="history.html">
+                    <span>History</span>
+                    <span class="arrow">&gt;</span>
+                </a>
             </li>
             <li class="menu-item">
-                <span>Detail Pembayaran</span>
-                <span class="arrow">&gt;</span>
+                <a href="pembayaran.html">
+                    <span>Detail Pembayaran</span>
+                    <span class="arrow">&gt;</span>
+                </a>
             </li>
             <li class="menu-item logout">
-                <span>Log Out</span>
-                <span class="arrow">&gt;</span>
+                <a href="login.html">
+                    <span>Log Out</span>
+                    <span class="arrow">&gt;</span>
+                </a>
             </li>
         </ul>
+    </main>
 </body>
 </html>
