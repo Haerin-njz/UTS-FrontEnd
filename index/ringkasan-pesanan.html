@@ -1,11 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ringkasan pesanan</title>
+    <title>Ringkasan Order - Cinema Ticketing</title>
+    
+    <link rel="stylesheet" href="/style/ringkasan-pesanan.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
-    
+
+    <div class="order-container">
+        <header class="page-header">
+            <a href="#" class="back-button">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </a>
+            <span class="header-title">History</span>
+            <a href="#" class="profile-icon">
+                <span class="material-symbols-outlined">account_circle</span>
+            </a>
+        </header>
+
+        <main class="order-summary-card">
+            <h1>Ringkasan Order</h1>
+
+            <section class="order-item">
+                <img src="/img/Gambar-Onepiece.jpg" alt="Poster Film One Piece" class="movie-poster">
+                <div class="item-details">
+                    <h2>One Piece</h2>
+                </div>
+            </section>
+
+            <hr class="separator">
+
+            <section class="promo-details">
+                <h3>Promo Voucher Digunakan</h3>
+                <div class="promo-row">
+                    <span class="voucher-code">FF8230S</span>
+                    <span class="voucher-amount">- Rp.40.000,00</span>
+                    <button class="remove-promo">&times;</button>
+                </div>
+            </section>
+
+            <hr class="separator">
+
+            <section class="payment-details">
+                <h3>Total Pembayaran</h3>
+                <div class="payment-row">
+                    <span>Harga tiket</span>
+                    <span>Rp.65.000,00</span>
+                </div>
+                <div class="payment-row">
+                    <span>Biaya Layanan</span>
+                    <span>Rp.2.500,00</span>
+                </div>
+                <div class="payment-row">
+                    <span>Promo</span>
+                    <span class="voucher-amount">- Rp.40.000,00</span>
+                </div>
+                
+                <div class="payment-row total">
+                    <strong>Total Akhir</strong>
+                    <strong>Rp.27.500,00</strong>
+                </div>
+            </section>
+
+            <hr class="separator-dashed">
+
+            <div class="action-button-container">
+                <button class="btn-continue">Lanjutkan Pembayaran</button>
+            </div>
+        </main>
+    </div>
+
 </body>
 </html>
