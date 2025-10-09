@@ -1,55 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/style/jadwal.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jadwal Film</title>
-    <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    h1 { text-align: center; }
-    .film-card {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 15px;
-      margin: 15px auto;
-      max-width: 400px;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-    }
-    .film-card h2 { margin-top: 0; }
-    .schedule { margin-top: 10px; }
-    .schedule button {
-      margin: 5px;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 5px;
-      background-color: #4CAF50;
-      color: white;
-      cursor: pointer;
-    }
-    .schedule button:hover {
-      background-color: #45a049;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Film</title>
+  <link rel="stylesheet" href="/style/jadwal.css">
 </head>
-<body>
-    <h1>Jadwal Film Hari Ini</h1>
 
-  <div class="film-card">
-    <h2>Ada Apa dengan Cinta?</h2>
-    <p>Genre: Drama, Romansa</p>
-    <div class="schedule">
-      <p>Pilih Jadwal:</p>
-      <button onclick="pesan('Ada Apa dengan Cinta?', '12')">12:00</button>
-      <button onclick="pesan('Ada Apa dengan Cinta?', '14')">14:00</button>
-      <button onclick="pesan('Ada Apa dengan Cinta?', '16')">16:00</button>
-      <button onclick="pesan('Ada Apa dengan Cinta?', '18')">18:00</button>
-      <button onclick="pesan('Ada Apa dengan Cinta?', '20')">20:00</button>
+<body>
+  <header>
+    🎥 <span>Jadwal Film Hari Ini</span>
+  </header>
+
+  <section class="film-card">
+    <img src="/img/Gambar-Onepiece.jpg" alt="Poster One Piece Film Red">
+
+    <div class="film-info">
+      <h2>ONE PIECE FILM RED</h2>
+      <p><strong>Genre:</strong> Adventure, Fantasy</p>
+      <p><strong>Durasi:</strong> 115 Menit</p>
+
+      <div class="schedule">
+        <h3>Pilih Jadwal Tayang:</h3>
+        <div class="day">
+          <button onclick="pesan('ONE PIECE FILM RED', '12:00')">12:00</button>
+          <button onclick="pesan('ONE PIECE FILM RED', '14:00')">14:00</button>
+          <button onclick="pesan('ONE PIECE FILM RED', '16:00')">16:00</button>
+          <button onclick="pesan('ONE PIECE FILM RED', '18:00')">18:00</button>
+          <button onclick="pesan('ONE PIECE FILM RED', '20:00')">20:00</button>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <footer>
+    <p> Copyrights Kelompok 4 </p>
+  </footer>
+
   <script>
     function pesan(film, jam) {
-      // arahkan ke checkout dengan query string
       window.location.href = `checkout-film.html?film=${encodeURIComponent(film)}&jam=${jam}`;
     }
   </script>

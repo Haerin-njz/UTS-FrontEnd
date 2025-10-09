@@ -1,45 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <link rel="stylesheet" href="/style/checkout.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pemesanan Kursi</title>
-  <style>
-    .screen { text-align:center; margin:20px; font-weight:bold; }
-    .row { display:flex; justify-content:center; margin:5px 0; }
-    .seat {
-      width:30px; height:30px;
-      margin:3px;
-      background:#4CAF50; 
-      color:white; font-size:12px;
-      display:flex; align-items:center; justify-content:center;
-      border-radius:5px;
-      cursor:pointer;
-      user-select: none;
-    }
-    .seat.selected { background:#2196F3; } 
-    .seat.booked { background:#777; cursor:not-allowed; } 
-  </style>
+  <link rel="stylesheet" href="/style/checkout.css">
 </head>
 <body>
-  <h1>Pilih Kursi</h1>
+  <header>
+    🎟️ <span>Pemesanan Kursi Bioskop</span>
+  </header>
 
-  <div class="screen">Layar</div>
-  <div id="seat-container"></div>
+  <main>
+    <div class="container">
+      <div class="screen">LAYAR</div>
+      <div id="seat-container"></div>
 
-  <h3>Kursi Dipilih:</h3>
-  <p id="selected-seats">-</p>
-  <button id="checkoutBtn">Checkout</button>
-  <button id="backBtn">Kembali ke Jadwal</button>
+      <div class="info">
+        <h3>Kursi Dipilih:</h3>
+        <p id="selected-seats">-</p>
+      </div>
+
+      <div class="buttons">
+        <button id="checkoutBtn" class="checkout">Checkout</button>
+        <button id="backBtn" class="back">Kembali ke Jadwal</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Copyright Kelompok 4</p>
+  </footer>
 
   <script>
     const bookings = JSON.parse(localStorage.getItem("bookings")) || {
-      "12": [],
-      "14": [],
-      "16": [],
-      "18": [],
-      "20": []
+      "12:00": [],
+      "14:00": [],
+      "16:00": [],
+      "18:00": [],
+      "20:00": []
     };
 
     const seatContainer = document.getElementById('seat-container');
@@ -47,17 +46,18 @@
     const checkoutBtn = document.getElementById('checkoutBtn');
     const backBtn = document.getElementById('backBtn');
 
-    let selected = []; 
+    let selected = [];
 
     const params = new URLSearchParams(window.location.search);
-    const jam = params.get("jam") || "12";
+    const jam = params.get("jam") || "12:00";
+    const film = params.get("film") || "ONE PIECE FILM RED";
 
     function renderSeats(jam) {
       seatContainer.innerHTML = "";
       selected = [];
       output.textContent = "-";
 
-      for (let row = 0; row < 4; row++) {
+      for (let row = 0; row < 5; row++) {
         const rowDiv = document.createElement('div');
         rowDiv.classList.add('row');
 
@@ -76,7 +76,6 @@
 
           rowDiv.appendChild(seat);
         }
-
         seatContainer.appendChild(rowDiv);
       }
     }
@@ -99,12 +98,21 @@
       }
 
       bookings[jam] = bookings[jam].concat(selected);
-
       localStorage.setItem("bookings", JSON.stringify(bookings));
 
-      alert(`Checkout sukses untuk jam ${jam}: ${selected.join(", ")}`);
+      // Simpan data pesanan ke localStorage
+      const orderSummary = {
+        film: film,
+        jam: jam,
+        seats: selected,
+        hargaPerTiket: 65000,
+        biayaLayanan: 2500,
+        promo: 40000
+      };
+      localStorage.setItem("lastOrder", JSON.stringify(orderSummary));
 
-      window.location.href = "jadwal-film.html";
+      // Arahkan ke halaman ringkasan pesanan
+      window.location.href = "ringkasan-pesanan.html";
     });
 
     backBtn.addEventListener('click', () => {
