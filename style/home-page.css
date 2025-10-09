@@ -134,8 +134,10 @@ section.movie-gallery {
 
 .carousel {
     position: relative;
+    display: flex; /* <-- Kembalikan ini untuk menata panah */
+    align-items: center; /* <-- Kembalikan ini untuk menata panah */
     width: 100%;
-    overflow: hidden; /* Tambahkan ini agar film terpotong rapi */
+    overflow: hidden;
 }
 
 .movie-list {
@@ -151,6 +153,37 @@ section.movie-gallery {
     display: none;
 }
 
+/* --- Carousel Arrow Buttons --- */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-arrow {
+    left: 15px; /* Jarak dari kiri */
+}
+
+.next-arrow {
+    right: 15px; /* Jarak dari kanan */
+}
 
 .list-film {
     flex: 0 0 200px;
