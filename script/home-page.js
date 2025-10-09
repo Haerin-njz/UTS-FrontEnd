@@ -1,6 +1,22 @@
 // Menunggu hingga seluruh halaman HTML dimuat sebelum menjalankan script
 document.addEventListener("DOMContentLoaded", function() {
 
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    // Ambil elemen dari HTML
+    const authButtons = document.getElementById('auth-buttons');
+    const userIcon = document.getElementById('user-icon');
+
+    if (isLoggedIn === 'true') {
+        // Jika user sudah login, sembunyikan tombol login/signup dan tampilkan ikon
+        authButtons.style.display = 'none';
+        userIcon.style.display = 'block';
+    } else {
+        // Jika user belum login, tampilkan tombol login/signup dan sembunyikan ikon
+        authButtons.style.display = 'flex'; // atau 'block'
+        userIcon.style.display = 'none';
+    }
+
     // Mencari semua elemen carousel yang ada di halaman
     const carousels = document.querySelectorAll('.carousel');
 
