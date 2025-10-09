@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif; /* Menambahkan Poppins sebagai prioritas */
     background-color: #f0f2f5;
     color: #333;
     display: flex;
@@ -22,14 +22,15 @@ body {
     background-color: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    overflow: hidden; }
+    overflow: hidden;
+}
 
 /* --- Top Bar / Header --- */
 .top-bar {
     display: flex;
     align-items: center;
     padding: 16px 20px;
-    background-color: #F2D4A9; 
+    background-color: #F2D4A9; /* Warna krem dari sign-up */
 }
 
 .top-bar h1 {
@@ -38,7 +39,7 @@ body {
     margin: 0;
     font-size: 20px;
     font-weight: 600;
-    margin-left: -28px; 
+    margin-left: -28px; /* Trik agar judul di tengah */
 }
 
 .back-arrow {
@@ -58,22 +59,15 @@ body {
     margin-bottom: 24px;
 }
 
-.avatar .material-symbols-outlined {
-    font-size: 10px; /* Ukuran ikon */
-    border-radius: 50%;
-    padding: 20px;
-    display: inline-block;
-}
-
-.avatar img { /* atau .avatar svg */
+.avatar img {
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    border-radius: 50%;
 }
 
-/* --- Form Styling --- */
+/* --- Form Styling (Konsep dari Sign Up) --- */
 .login-form {
-    background-color: #F2D4A9; 
+    background-color: #F2D4A9; /* Warna krem yang sama dengan header */
     padding: 24px;
     border-radius: 8px;
     box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.25);
@@ -81,10 +75,6 @@ body {
 
 .input-group {
     margin-bottom: 16px;
-}
-
-.input-group:last-of-type {
-    margin-bottom: 0;
 }
 
 .input-group label {
@@ -97,13 +87,13 @@ body {
 .input-group input {
     width: 100%;
     padding: 12px 15px;
-    border: none;
+    border: none; /* Menghilangkan border */
     border-radius: 6px;
     font-size: 16px;
 }
 
 .input-group input:focus {
-    outline: 2px solid #7356BF; 
+    outline: 2px solid #7356BF; /* Memberi outline ungu saat di-klik */
 }
 
 /* --- Password Field with Icon --- */
@@ -114,7 +104,7 @@ body {
 }
 
 .password-wrapper input {
-    padding-right: 45px;
+    padding-right: 45px; /* Ruang untuk ikon mata */
 }
 
 .password-wrapper .material-symbols-outlined {
@@ -122,7 +112,7 @@ body {
     right: 12px;
     color: #888;
     cursor: pointer;
-    user-select: none; 
+    user-select: none;
 }
 
 /* --- Button & Bottom Link --- */
@@ -130,7 +120,7 @@ button[type="submit"] {
     width: 100%;
     padding: 14px;
     margin-top: 20px;
-    background-color: #e0ac69; 
+    background-color: #e0ac69; /* Warna krem lebih gelap untuk kontras */
     color: white;
     border: none;
     border-radius: 6px;
@@ -151,11 +141,23 @@ button[type="submit"]:hover {
 }
 
 .signup-link a {
-    color: #7356BF; 
+    color: #7356BF; /* Warna ungu agar serasi */
     font-weight: bold;
     text-decoration: none;
 }
 
 .signup-link a:hover {
     text-decoration: underline;
+}
+
+/* Styling untuk pesan error dari JS */
+.error-message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8d7da; /* Latar belakang merah muda */
+    color: #721c24; /* Teks merah tua */
+    border: 1px solid #f5c6cb;
+    text-align: center;
+    font-size: 14px;
 }
