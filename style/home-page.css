@@ -132,55 +132,19 @@ section.movie-gallery {
     font-weight: 500;
 }
 
-/* PENTING: Jadikan carousel sebagai referensi posisi */
 .carousel {
-    position: relative; /* Ini penting untuk posisi panah */
-    display: flex;
-    align-items: center;
-}
-
-/* HAPUS CSS .arrow LAMA DAN GANTI DENGAN INI */
-.arrow {
-    position: absolute;   /* Posisi panah akan mengambang di atas konten */
-    top: 50%;             /* Posisikan di tengah secara vertikal */
-    transform: translateY(-50%); /* Penyesuaian agar benar-benar di tengah */
-    z-index: 10;          /* Pastikan panah di atas gambar film */
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    border: none;
-    border-radius: 50%;   /* Membuatnya menjadi lingkaran */
-    width: 45px;          /* Lebar lingkaran */
-    height: 45px;         /* Tinggi lingkaran */
-    font-size: 1.5em;       /* Ukuran ikon panah */
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.2s;
-}
-
-.arrow:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-.prev-arrow {
-    left: 15px; /* Jarak dari sisi kiri */
-}
-
-.next-arrow {
-    right: 15px; /* Jarak dari sisi kanan */
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Tambahkan ini agar film terpotong rapi */
 }
 
 .movie-list {
     display: flex;
     gap: 20px;
-    overflow-x: scroll;  /* Ubah dari hidden ke scroll */
-    scroll-behavior: smooth; /* Membuat scroll menjadi mulus */
-    flex-grow: 1;
-    padding: 20px;
-    /* Menyembunyikan scrollbar bawaan browser */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    padding: 20px 0;
+    transition: transform 0.5s ease-in-out;
+    /* TAMBAHKAN BARIS INI */
+    width: max-content; /* <-- Kunci solusinya ada di sini */
 }
 
 .movie-list::-webkit-scrollbar { /* WebKit/Blink */
