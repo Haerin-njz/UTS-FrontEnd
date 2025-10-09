@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Konfirmasi Pembayaran</title>
-  <link rel="stylesheet" href="/style/konfirmasi.css" />
+  <link rel="stylesheet" href="../style/konfirmasi.css" />
 </head>
 <body>
   <header>Konfirmasi Pembayaran</header>
@@ -13,12 +13,14 @@
     <h2>Konfirmasi Pesanan</h2>
     <p>Pilih Metode Pembayaran</p>
 
+    <!-- Virtual Account -->
     <section class="method-section">
       <div class="method-title">Virtual Account</div>
       <div class="payment-option">
         <i class="icon">💲</i>
         <span>Bank</span>
         <select id="vaSelect">
+          <option value="">-- Pilih Bank --</option>
           <option value="Mandiri">Mandiri</option>
           <option value="BCA">BCA</option>
           <option value="BNI">BNI</option>
@@ -26,24 +28,38 @@
       </div>
     </section>
 
+    <!-- Kartu Kredit/Debit -->
     <section class="method-section">
       <div class="method-title">Kartu Kredit / Debit</div>
       <div class="payment-option">
         <i class="icon">💳</i>
         <span>Kartu</span>
         <select id="cardSelect">
+          <option value="">-- Pilih Jenis Kartu --</option>
           <option value="Visa">Visa</option>
           <option value="Mastercard">Mastercard</option>
         </select>
       </div>
     </section>
 
+    <!-- Tombol Aksi -->
     <div class="action">
-      <button id="lanjutBtn">Lanjutkan Pembayaran</button>
+      <button id="bayarBtn">Bayar</button>
+      <button id="historyBtn" style="display: none;">Lihat History</button>
     </div>
   </main>
 
-  <footer>© 2025 | Kelompok 4 </footer>
-  <script src="/script/confirm-bayar.js"></script>
+  <footer>© 2025 | Kelompok 4</footer>
+
+  <!-- Popup Pembayaran Berhasil -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>Pembayaran Berhasil 🎉</h3>
+      <p>Terima kasih telah melakukan pembayaran.</p>
+      <button id="okBtn">OK</button>
+    </div>
+  </div>
+
+  <script src="../script/confirm-bayar.js"></script>
 </body>
 </html>

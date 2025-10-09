@@ -1,15 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const vaSelect = document.getElementById("vaSelect");
-  const cardSelect = document.getElementById("cardSelect");
-  const lanjutBtn = document.getElementById("lanjutBtn");
+  const bayarBtn = document.getElementById("bayarBtn");
+  const historyBtn = document.getElementById("historyBtn");
+  const popup = document.getElementById("popup");
+  const okBtn = document.getElementById("okBtn");
 
-  lanjutBtn.addEventListener("click", () => {
-    const vaChoice = vaSelect.value;
-    const cardChoice = cardSelect.value;
+  bayarBtn.addEventListener("click", () => {
+    const va = document.getElementById("vaSelect").value;
+    const card = document.getElementById("cardSelect").value;
 
-    localStorage.setItem("virtualAccount", vaChoice);
-    localStorage.setItem("cardType", cardChoice);
+    // Validasi: salah satu metode harus dipilih
+    if (va === "" && card === "") {
+      alert("Silakan pilih salah satu metode pembayaran terlebih dahulu!");
+      return;
+    }
 
-    window.location.href = "ringkasan-pesanan.html";
+    // Simpan ke localStorage (opsional)
+    localStorage.setItem("metodePembayaran", va || card);
+
+    // Tampilkan pop-up pembayaran berhasil
+    popup.style.display = "flex";
+  });
+
+  okBtn.addEventListener("click", () => {
+    // Tutup popup dan ubah tombol
+    popup.style.display = "none";
+    bayarBtn.style.display = "none";
+    historyBtn.style.display = "inline-block";
+  });
+
+  historyBtn.addEventListener("click", () => {
+    window.location.href = "history.html";
   });
 });
