@@ -99,10 +99,9 @@ header .container {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* TAMBAHKAN INI: CSS baru untuk menata gambar ikon di dalam tombol */
 .custom-btn .icon {
-    width: 24px;  /* Atur lebar ikon */
-    height: 24px; /* Atur tinggi ikon */
+    width: 24px;  
+    height: 24px; 
 }z
 
 /* --- Movie Gallery Section --- */
@@ -111,7 +110,7 @@ header .container {
 }
 
 section.movie-gallery {
-    margin-top: 80px; /* Atur besar jarak yang Anda inginkan di sini */
+    margin-top: 80px; 
 }
 
 .gallery-header {
@@ -134,8 +133,8 @@ section.movie-gallery {
 
 .carousel {
     position: relative;
-    display: flex; /* <-- Kembalikan ini untuk menata panah */
-    align-items: center; /* <-- Kembalikan ini untuk menata panah */
+    display: flex; 
+    align-items: center; 
     width: 100%;
     overflow: hidden;
 }
@@ -146,10 +145,10 @@ section.movie-gallery {
     padding: 20px 0;
     transition: transform 0.5s ease-in-out;
     /* TAMBAHKAN BARIS INI */
-    width: max-content; /* <-- Kunci solusinya ada di sini */
+    width: max-content; 
 }
 
-.movie-list::-webkit-scrollbar { /* WebKit/Blink */
+.movie-list::-webkit-scrollbar { 
     display: none;
 }
 
@@ -178,11 +177,11 @@ section.movie-gallery {
 }
 
 .prev-arrow {
-    left: 15px; /* Jarak dari kiri */
+    left: 15px; 
 }
 
 .next-arrow {
-    right: 15px; /* Jarak dari kanan */
+    right: 15px; 
 }
 
 .list-film {
