@@ -1,85 +1,122 @@
-/* Reset */
 body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #FFF6E0, #FFE0B2);
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #fff;
   color: #333;
-  text-align: center;
 }
 
-/* Judul */
-h1 {
+header {
   background-color: #E6B980;
+  color: white;
+  text-align: center;
   padding: 15px;
-  margin: 0;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #d4a46c;
 }
 
-/* Layar */
+.container {
+  text-align: center;
+  margin: 30px auto;
+  max-width: 700px;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
 .screen {
-  margin: 20px;
+  background: #FFD699;
+  color: #333;
   font-weight: bold;
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background: #f9f9f9;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-/* Kursi */
 .row {
   display: flex;
   justify-content: center;
-  margin: 5px 0;
+  margin-bottom: 10px;
 }
 
 .seat {
   width: 35px;
   height: 35px;
-  margin: 3px;
-  background: #E6B980;
+  margin: 4px;
+  background-color: #1c8d20;
   color: black;
-  font-size: 12px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
+  font-weight: bold;
   cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.seat:hover {
+  transform: scale(1.1);
+  background-color: #7dc328;
 }
 
 .seat.selected {
-  background: #2196F3;
+  background-color: #2196F3;
   color: white;
 }
 
 .seat.booked {
-  background: #777;
+  background-color: #777;
   color: white;
   cursor: not-allowed;
 }
 
-/* Tombol */
+.info {
+  margin-top: 20px;
+}
+
+.buttons {
+  margin-top: 25px;
+}
+
 button {
-  margin: 10px;
-  padding: 10px 15px;
+  padding: 10px 25px;
+  font-size: 15px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  margin: 5px;
   font-weight: bold;
+  transition: 0.2s;
 }
 
-#checkoutBtn {
+.checkout {
   background-color: #4CAF50;
   color: white;
 }
 
-#checkoutBtn:hover {
+.checkout:hover {
   background-color: #45a049;
 }
 
-#backBtn {
-  background-color: #ddd;
+.back {
+  background-color: #FFB84D;
+  color: black;
 }
 
-#backBtn:hover {
-  background-color: #bbb;
+.back:hover {
+  background-color: #FFCC66;
+}
+
+footer {
+  text-align: center;
+  background-color: #E6B980;
+  color: white;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
 }
