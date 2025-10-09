@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    🎟️ <span>Pemesanan Kursi Bioskop</span>
+    <span>Pemesanan Kursi Bioskop</span>
   </header>
 
   <main>
@@ -33,6 +33,17 @@
   </footer>
 
   <script>
+    // --- 🔄 RESET BOOKING HARIAN OTOMATIS ---
+    const today = new Date().toISOString().split("T")[0];
+    const lastDate = localStorage.getItem("lastBookingDate");
+
+    if (lastDate !== today) {
+      localStorage.removeItem("bookings");
+      localStorage.setItem("lastBookingDate", today);
+      console.log("Hari baru! Data booking direset otomatis.");
+    }
+
+    // --- DATA BOOKING ---
     const bookings = JSON.parse(localStorage.getItem("bookings")) || {
       "12:00": [],
       "14:00": [],
@@ -48,10 +59,12 @@
 
     let selected = [];
 
+    // Ambil parameter dari URL
     const params = new URLSearchParams(window.location.search);
     const jam = params.get("jam") || "12:00";
     const film = params.get("film") || "ONE PIECE FILM RED";
 
+    // --- RENDER KURSI ---
     function renderSeats(jam) {
       seatContainer.innerHTML = "";
       selected = [];
@@ -80,6 +93,7 @@
       }
     }
 
+    // --- PILIH / BATALKAN KURSI ---
     function toggleSeat(seatId, seatElem) {
       if (seatElem.classList.contains('selected')) {
         seatElem.classList.remove('selected');
@@ -91,23 +105,26 @@
       output.textContent = selected.length ? selected.join(", ") : "-";
     }
 
+    // --- CHECKOUT ---
     checkoutBtn.addEventListener('click', () => {
       if (selected.length === 0) {
         alert("Belum pilih kursi!");
         return;
       }
 
+      // Simpan booking kursi
       bookings[jam] = bookings[jam].concat(selected);
       localStorage.setItem("bookings", JSON.stringify(bookings));
 
-      // Simpan data pesanan ke localStorage
+      // Simpan data order ke localStorage
       const orderSummary = {
         film: film,
         jam: jam,
         seats: selected,
         hargaPerTiket: 65000,
         biayaLayanan: 2500,
-        promo: 40000
+        promo: 40000,
+        tanggal: today
       };
       localStorage.setItem("lastOrder", JSON.stringify(orderSummary));
 
@@ -115,10 +132,12 @@
       window.location.href = "ringkasan-pesanan.html";
     });
 
+    // --- TOMBOL KEMBALI ---
     backBtn.addEventListener('click', () => {
       window.location.href = "jadwal-film.html";
     });
 
+    // Render awal
     renderSeats(jam);
   </script>
 </body>

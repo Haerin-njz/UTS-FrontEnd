@@ -5,12 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jadwal Film</title>
   <link rel="stylesheet" href="/style/jadwal.css">
+  <style>
+    /* Tambahan tombol kembali */
+    .back-button {
+      display: inline-block;
+      margin: 25px 40px 0 40px;
+      padding: 10px 20px;
+      background-color: #E6B980;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .back-button:hover {
+      background-color: #dba96b;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 
 <body>
   <header>
-    🎥 <span>Jadwal Film Hari Ini</span>
+  <span>Jadwal Film Hari Ini</span>
   </header>
+
+  <!-- Tombol kembali ke detail film -->
+  <a href="detail-film.html" class="back-button">← Kembali</a>
 
   <section class="film-card">
     <img src="/img/Gambar-Onepiece.jpg" alt="Poster One Piece Film Red">
@@ -34,7 +56,7 @@
   </section>
 
   <footer>
-    <p> Copyrights Kelompok 4 </p>
+    <p>Copyrights Kelompok 4</p>
   </footer>
 
   <script>
