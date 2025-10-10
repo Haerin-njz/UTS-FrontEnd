@@ -37,10 +37,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Simulasi Login (username: user, password: 12345)
-        if (username === 'user' && password === '12345') {
+        if (username === 'jonathan' && password === 'jonathan123') {
             errorMessage.style.display = 'none';
             alert('Login berhasil! Anda akan diarahkan ke halaman utama.');
-            window.location.href = 'home-page.html'; 
+            window.location.href = '/index/index.html'; 
         } else {
             errorMessage.textContent = 'Username atau Password salah!';
             errorMessage.style.display = 'block';
