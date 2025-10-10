@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Jika tidak ada error, pendaftaran berhasil!
             alert('Pendaftaran Berhasil!');
             
-            // (Opsional) Simpan data ke localStorage seperti contoh sebelumnya
+            
             const user = {
                 username: usernameInput.value.trim(),
                 email: emailInput.value.trim(),
@@ -91,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             localStorage.setItem('user', JSON.stringify(user));
 
-            // (Opsional) Kosongkan form setelah berhasil
             signUpForm.reset();
 
             window.location.href = 'login.html';
